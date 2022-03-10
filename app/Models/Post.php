@@ -45,10 +45,18 @@ class Post {
         );        
     }
 
-    public static function find($slug) {
+    public static function findOrFail($slug) {
+        $post = static::find($slug);
+        if(!$post) {
+            throw new ModelNotFoundException();
+        }
 
-        $posts = static::all();
-        return $posts->firstWhere('linkTo', $slug);
-    
+        return $post;
+    }
+
+    public static function find($slug) {
+        $post = static::all()->firstWhere('linkTo', $slug);
+
+        return $post;
     }
 }
