@@ -62,3 +62,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Class Notes
+
+Enclose databse credentials between between double quotes. https://stackoverflow.com/questions/43169240/php-artisan-migrate-sqlstatehy000-1045-access-denied-for-user-laravell
+
