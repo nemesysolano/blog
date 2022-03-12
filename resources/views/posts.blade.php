@@ -6,13 +6,12 @@
         @foreach ($posts as $post)
             <article class="{{ $loop->even ? 'foobar' : ''}}">
                 <h2>
-                    <a href="/posts/{{ $post->id }}">
-                        {{ $post->title }}
-                    </a>
+                    <a href="/categories/{{ $post->category->id }}">{{$post->category->name}}</a>::<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                 </h2>
-                <div>
+                <h3>By <a href="/bloggers/{{ $post->author->id }}">{!! $post->author->username !!}</a></h3>
+                <p>
                     {{ $post->exceprt   }}
-                </div>
+                </p>
             </article>
         @endforeach
     </x-slot>
